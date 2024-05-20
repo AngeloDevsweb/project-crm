@@ -4,7 +4,7 @@
 <p>Debajo veras información de todos tus clientes en una lista </p>
 
 <div>
-    <button class="btn btn-primary"><ion-icon name="person-add-outline"></ion-icon>Nuevo cliente</button>
+    <a href="/clients/create" class="btn btn-primary"><ion-icon name="person-add-outline"></ion-icon>Nuevo cliente</a>
     <table class="table shadow table-hover">
         <thead class="table-secondary">
             <tr>
@@ -14,7 +14,7 @@
                 <th scope="col">Industria</th>
                 <th scope="col">Web</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Estado</th>
+                <th scope="col">Detalles</th>
             </tr>
         </thead>
         <tbody>

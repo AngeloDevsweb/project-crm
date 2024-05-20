@@ -30,7 +30,16 @@ class ClientsController extends Controller
     }
     //funcion para crear un cliente en la base de datos
     public function store(Request $request){
-        Client::create($request->all());
+        //obtenemos el id del usuario autenticado
+        $userId = Auth::id();
+         // Agregar el user_id a los datos del formulario
+         $data = $request->all();
+         $data['user_id'] = $userId;
+
+        //Client::create($request->all());
+
+        //crear el cliente con los datos añadidos user_id
+        Client:: create($data);
         return redirect()->route('clients.index');
     }
     //funcion para mostrar un solo cliente
