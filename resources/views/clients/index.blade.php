@@ -26,7 +26,7 @@
                     <td>{{$client->industria}}</td>
                     <td>{{$client->web}}</td>
                     <td><div class="bg-success">{{$client->estado}}</div></td>
-                    <td>Ver detalles...</td>
+                    <td><a href="{{ route('clients.show', $client->id) }}">Ver detalles...</a></td>
                 </tr>
             @endforeach
         </tbody>
