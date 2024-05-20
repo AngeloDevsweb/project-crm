@@ -4,7 +4,7 @@
     <div class="container">
         <div class="contenedor-detail">
             <div class="card card-body shadow">
-                <h5><strong>Cliente:</strong> {{ $client->nombre }} <a href="" class="icon-update"><ion-icon name="create"></ion-icon></a></h5>
+                <h5><strong>Cliente:</strong> {{ $client->nombre }} <a href="{{route('clients.edit',$client->id)}}" class="icon-update"><ion-icon name="create"></ion-icon></a></h5>
                 <p>{{ $client->descripcion }}</p>
                 <h6><strong>Direccion:</strong></h6>
                 <p>{{ $client->direccion }}</p>

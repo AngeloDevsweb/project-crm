@@ -1,3 +1,29 @@
+.btn-CrearCliente{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+}
+.btn-ActualizarCliente{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+}
+.back-index{
+    font-size: 40px;
+    color: #0f0c29;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+.back-index:hover{
+    color: slategray;
+}
 .contenedor-detail{
     margin: 100px 300px;
 }

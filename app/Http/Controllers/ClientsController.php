@@ -35,9 +35,7 @@ class ClientsController extends Controller
          // Agregar el user_id a los datos del formulario
          $data = $request->all();
          $data['user_id'] = $userId;
-
         //Client::create($request->all());
-
         //crear el cliente con los datos añadidos user_id
         Client:: create($data);
         return redirect()->route('clients.index');
@@ -53,6 +51,7 @@ class ClientsController extends Controller
     //
     public function update(Request $request, Client $client){
         $client->update($request->all());
+        //return redirect()->route('clients.index');
         return redirect()->route('clients.index');
     }
     //publi
