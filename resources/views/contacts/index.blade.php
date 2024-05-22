@@ -25,7 +25,7 @@
                             <td>{{ $contact->cargo }}</td>
                             <td>{{ $contact->relacionComercial }}</td>
                             <td>{{ $contact->telefono }}</td>
-                            <td><a href="{{ route('contacts.show', $contact->id) }}" class="view-client"><ion-icon name="arrow-redo"></ion-icon></a></td>
+                            <td><a href="{{ route('contacts.show', $contact->id) }}" class="view-client"><ion-icon name="eye"></ion-icon></a></td>
                             {{-- <td>{{ $contact->correo }}</td>
                     <td>{{ $contact->nota }}</td>
                     <td>{{ $contact->client->nombre }}</td> --}}

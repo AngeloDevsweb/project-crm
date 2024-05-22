@@ -40,15 +40,19 @@ class ContactsController extends Controller
 
         return redirect()->route('contacts.index');
     }
-
+    //cargar un solo contacto con su cliente asociado
     public function show(Contact $contact)
     {
+        //usando eloquent
+        $contact->load('client');
         return view('contacts.show', compact('contact'));
     }
 
     public function edit(Contact $contact)
-    {
-        return view('contacts.edit', compact('contact'));
+    {  
+        $user = Auth::user();
+        $clients = Client::where('user_id', $user->id)->get();
+        return view('contacts.edit', compact('contact', 'clients'));
     }
 
     public function update(Request $request, Contact $contact)
