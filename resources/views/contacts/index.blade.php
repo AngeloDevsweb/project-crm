@@ -5,7 +5,8 @@
         <p>A continuación verás una lista de todos tus contactos.</p>
 
         <div class="">
-            <a href="/contacts/create" class="btn-CrearContacto"><ion-icon name="person-add-outline"></ion-icon>Nuevo Contacto</a>
+            <a href="/contacts/create" class="btn-CrearContacto"><ion-icon name="person-add-outline"></ion-icon>Nuevo
+                Contacto</a>
             <table class="table shadow table-hover mt-5">
                 <thead>
                     <tr>
@@ -23,16 +24,30 @@
                             <td>{{ $contact->nombre }}</td>
                             <td>{{ $contact->descripcion }}</td>
                             <td>{{ $contact->cargo }}</td>
-                            <td>{{ $contact->relacionComercial }}</td>
-                            <td>{{ $contact->telefono }}</td>
-                            <td><a href="{{ route('contacts.show', $contact->id) }}" class="view-client"><ion-icon name="eye"></ion-icon></a></td>
-                            {{-- <td>{{ $contact->correo }}</td>
+                            @php
+                                $estadoClases = [
+                                    'Buena' => 'estado-bueno',
+                                    'Neutral' => 'estado-neutral',
+                                    'Mala' => 'estado-malo',
+                                ];
+                                $estadoActual = $estadoClases[$contact->relacionComercial] ?? 'estilo-estado-default';
+                            @endphp
+                            <td>
+                                <div class="{{$estadoActual}}">
+                                    {{ $contact->relacionComercial }}
+                                </div>
+                            </td>
+
+        <td>{{ $contact->telefono }}</td>
+        <td><a href="{{ route('contacts.show', $contact->id) }}" class="view-client"><ion-icon
+                    name="eye"></ion-icon></a></td>
+        {{-- <td>{{ $contact->correo }}</td>
                     <td>{{ $contact->nota }}</td>
                     <td>{{ $contact->client->nombre }}</td> --}}
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+    </div>
     </div>
 @endsection

@@ -57,9 +57,9 @@
                 <div class="col-md-6">
                     <div class="form-floating">
                         <select id="floatingSelect2" class="form-select" name="relacionComercial" required>
-                            <option>Buena</option>
-                            <option>Neutral</option>
-                            <option>Mala</option>
+                            <option value="Buena" {{$contact->relacionComercial == 'Buena'? 'selected': ''}} >Buena</option>
+                            <option value="Neutral"{{$contact->relacionComercial == 'Neutral'? 'selected': ''}} >Neutral</option>
+                            <option value="Mala" {{$contact->relacionComercial == 'Mala'? 'selected': ''}}>Mala</option>
                         </select>
                         <label for="floatingSelect2" class="form-label">Relacion Comercial</label>
                     </div>
@@ -67,13 +67,13 @@
 
                 <div class="col-12">
                     <div class="form-floating">
-                        <textarea class="form-control" id="floatingTextarea" name="nota" rows="3" required></textarea>
+                        <textarea class="form-control" id="floatingTextarea" name="nota" rows="3" required>{{$contact->nota}}</textarea>
                         <label for="floatingTextarea" class="form-label">Nota</label>
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn-CrearContacto">Crear Contacto</button>
+                    <button type="submit" class="btn-ActualizarContacto">Editar Contacto</button>
                 </div>
 
             </form>

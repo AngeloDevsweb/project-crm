@@ -34,3 +34,21 @@
     color: black;
     font-size: 22px;
 }
+.estado-bueno{
+    background-color: #41B06E;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
+.estado-neutral{
+    background-color: #FF9800;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
+.estado-malo{
+    background-color: #e8281a;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
