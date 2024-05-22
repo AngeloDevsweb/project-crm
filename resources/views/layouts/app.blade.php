@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/clients.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contacts.css') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -38,7 +39,7 @@
 
                         <a href="/dashboard" class="navegacion"><ion-icon class="icon-navigation" name="apps-outline"></ion-icon>Dashboard</a>
                         <a href="/clients" class="navegacion"><ion-icon class="icon-navigation" name="briefcase-outline"></ion-icon>Clientes</a>
-                        <a href="" class="navegacion"><ion-icon class="icon-navigation" name="people-outline"></ion-icon>Contactos</a>
+                        <a href="/contacts" class="navegacion"><ion-icon class="icon-navigation" name="people-outline"></ion-icon>Contactos</a>
                         <a href="" class="navegacion"><ion-icon class="icon-navigation" name="folder-outline"></ion-icon>Contratos</a>
                         <a href="" class="navegacion"><ion-icon class="icon-navigation" name="albums-outline"></ion-icon>Actividades</a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

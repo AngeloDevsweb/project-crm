@@ -2,26 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Auth;
 
 class ContactsController extends Controller
 {
-    //
+    //agregar middleware de autenticacion
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    // Método para mostrar la lista de contactos
     public function index()
     {
-        $contacts = Contact::all();
+        $user = Auth::user();
+        $contacts = Contact::where('user_id', $user->id)->with('client')->get();
+
         return view('contacts.index', compact('contacts'));
     }
-
+    //funcion para mostrar el form crear contacto
     public function create()
     {
-        return view('contacts.create');
+        $user = Auth::user();
+        $clients = Client::where('user_id', $user->id)->get();
+
+        return view('contacts.create', compact('clients'));
     }
 
     public function store(Request $request)
     {
-        Contact::create($request->all());
+        $userId = Auth::id();
+        $contact = new Contact($request->all());
+        $contact->user_id = $userId;
+        $contact->save();
+
         return redirect()->route('contacts.index');
     }
 
