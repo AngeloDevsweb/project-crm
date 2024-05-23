@@ -16,5 +16,11 @@ class ActivityController extends Controller
         $this->middleware('auth');
     }
     //metodo para mostrar actividades
-    
+    public function index(){
+        //$activity = Activity::all();
+       $user = Auth::user();
+       $clientIds = $user->clients->pluck('id');
+       $activity = Activity::whereIn('client_id', $clientIds)->get();
+        return view('activity.index', compact('activity'));
+    }
 }

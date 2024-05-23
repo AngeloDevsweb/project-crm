@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,5 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('clients', ClientsController::class);
 Route::resource('contacts', ContactsController::class);
+Route::resource('activity', ActivityController::class);
 
