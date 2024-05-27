@@ -60,3 +60,10 @@ php artisan make:model Contact
     php artisan make:controller ContactsController
 
 ```
+7 Una forma resumida
+```bash
+    php artisan make:model Contract -m
+    php artisan migrate
+    php artisan make:controller ContractController --resource
+
+```
