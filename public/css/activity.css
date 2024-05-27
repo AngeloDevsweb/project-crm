@@ -56,3 +56,8 @@
     padding: 10px;
     text-decoration: none;
 }
+.table td {
+    max-width: 500px; /* Establece un ancho máximo para las celdas */
+    word-wrap: break-word; /* Permite que las palabras se dividan y bajen a la siguiente línea si son demasiado largas */
+    white-space: normal; /* Permite que el texto se ajuste en múltiples líneas */
+}

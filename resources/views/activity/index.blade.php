@@ -14,7 +14,7 @@
                         <th scope="col">Cliente</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Tipo de actividad</th>
-                        <th scope="col" class="text-center">Ver</th>
+                        <th scope="col" >Ver</th>
 
                     </tr>
                 </thead>
