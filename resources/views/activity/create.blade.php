@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn-CrearContacto">Crear Actividad</button>
+                    <button type="submit" class="btn-CrearActividad">Crear Actividad</button>
                 </div>
 
             </form>

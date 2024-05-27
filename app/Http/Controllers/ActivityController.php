@@ -42,7 +42,13 @@ class ActivityController extends Controller
         $activity->delete();
         return redirect()->route('activity.index');
     }
-    public function edit(){
-        return view('activity.edit');
+    public function edit(Activity $activity){
+        $user = Auth::user();
+        $clients = $user->clients;
+        return view('activity.edit', compact('activity', 'clients'));
+    }
+    public function update(Request $request, Activity $activity){
+        $activity->update($request->all());
+        return redirect()->route('activity.index');
     }
 }

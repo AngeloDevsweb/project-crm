@@ -1,5 +1,5 @@
 .container-activity{
-    padding: 80px;
+    padding: 50px;
 }
 .ver-detalles{
     font-size: 24px;
@@ -37,4 +37,22 @@
     width:130px;
     text-align: center;
     padding: 3px;
+}
+.btn-ActualizarActividad{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+}
+.btn-CrearActividad{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
 }
