@@ -5,4 +5,36 @@
     font-size: 24px;
     text-decoration: none;
     color: #0f0c29;
+    padding: 28px;
+}
+.container-activity-detail{
+    padding-left: 260px;
+    padding-right: 260px;
+    margin-top: 90px;
+}
+.icono-fecha{
+    font-size: 35px;
+    color: #302b63;
+}
+.estilo-fecha{
+    font-weight: 600;
+    margin-left: 5px;
+    margin-top: 15px;
+    font-size: 17px;
+}
+.estilo-cliente{
+    background-color: #302b63;
+    color: white;
+    border-radius: 15px;
+    width: 120px;
+    text-align: center;
+    padding: 3px;
+}
+.estilo-actividad-tipo{
+    background-color: #41B06E;
+    color: white;
+    border-radius: 15px;
+    width:130px;
+    text-align: center;
+    padding: 3px;
 }

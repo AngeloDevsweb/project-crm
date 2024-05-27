@@ -14,7 +14,7 @@
                         <th scope="col">Cliente</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Tipo de actividad</th>
-                        <th scope="col">Ver</th>
+                        <th scope="col" class="text-center">Ver</th>
 
                     </tr>
                 </thead>
@@ -23,7 +23,11 @@
                         <tr>
                             <td>{{ $acti->nota }}</td>
                             <td>{{ $acti->client->nombre }}</td>
-                            <td>{{ $acti->fecha }}</td>
+                            <td>
+                                <div>
+                                    {{ $acti->fecha }}
+                                </div>
+                            </td>
                             @php
                                 $estadoClases = [
                                     'Reunion' => 'estado-bueno',
@@ -37,7 +41,7 @@
                                     {{ $acti->tipodeactividad }}
                                 </div>
                             </td>
-                            <td><a href="" class="ver-detalles" ><ion-icon name="eye"></ion-icon></a></td>
+                            <td><a href="{{ route('activity.show', $acti->id) }}" class="ver-detalles" ><ion-icon name="eye"></ion-icon></a></td>
                         </tr>
                                   
                     @endforeach

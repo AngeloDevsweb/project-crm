@@ -23,4 +23,26 @@ class ActivityController extends Controller
        $activity = Activity::whereIn('client_id', $clientIds)->get();
         return view('activity.index', compact('activity'));
     }
+    public function create(){
+        $user = Auth::user();
+        $clientIds = $user->clients;
+        return view('activity.create', compact('clientIds'));
+    }
+    public function store(Request $request){
+        $activity = new Activity($request->all());
+        $activity->save();
+
+        return redirect()->route('activity.index');
+    }
+    public function show(Activity $activity){
+        $activity->load('client');
+        return view('activity.show', compact('activity'));
+    }
+    public function destroy(Activity $activity){
+        $activity->delete();
+        return redirect()->route('activity.index');
+    }
+    public function edit(){
+        return view('activity.edit');
+    }
 }
