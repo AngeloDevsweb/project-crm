@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\ContractController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,4 +29,5 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 Route::resource('clients', ClientsController::class);
 Route::resource('contacts', ContactsController::class);
 Route::resource('activity', ActivityController::class);
+Route::resource('contrats', ContractController::class);
 

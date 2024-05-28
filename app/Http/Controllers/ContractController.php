@@ -2,16 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Client;
+use App\Models\Contract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ContractController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   //middleware para validacion de rutas
+   public function __construct()
+   {
+       $this->middleware('auth');
+   }
+
     public function index()
     {
         //
+        $user = Auth::user();
+        $clientsId = $user->clients->pluck('id');
+        $contrats = Contract::whereIn('client_id', $clientsId)->get();
+        return view('contrats.index', compact('contrats'));
     }
 
     /**
@@ -20,6 +32,9 @@ class ContractController extends Controller
     public function create()
     {
         //
+        $user = Auth::user();
+        $clients = $user->clients;
+        return view('contrats.create', compact('clients'));
     }
 
     /**
@@ -28,6 +43,9 @@ class ContractController extends Controller
     public function store(Request $request)
     {
         //
+        $contrat = new Contract($request->all());
+        $contrat->save();
+        return redirect()->route('contrats.index');
     }
 
     /**

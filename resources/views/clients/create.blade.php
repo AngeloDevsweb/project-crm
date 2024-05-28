@@ -14,7 +14,7 @@
                             <input id="floatingInput" type="text" name="nombre" class="form-control" placeholder="Ingresar nombre" required >
                             <label for="floatingInput" class="form-label">Nombre</label>
                         </div>
-                      </div>
+                    </div>
                       <div class="col-md-6">
                         <div class="form-floating">
                             <input id="floatingInput2" type="text" class="form-control" name="direccion" required placeholder="Ingresar direccion del cliente">
