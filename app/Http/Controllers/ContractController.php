@@ -65,7 +65,9 @@ class ContractController extends Controller
     public function edit(Contract $contrat)
     {
         //
-        return view('contrats.edit');
+        $user = Auth::user();
+        $clients = $user->clients;
+        return view('contrats.edit', compact('contrat', 'clients'));
     }
 
     /**
@@ -74,6 +76,8 @@ class ContractController extends Controller
     public function update(Request $request, Contract $contrat)
     {
         //
+        $contrat->update($request->all());
+        return redirect()->route('contrats.index');
     }
 
     /**
