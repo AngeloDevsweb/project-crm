@@ -19,3 +19,30 @@
     text-align: center;
     color: white;
 }
+.container-contract-detail{
+    padding-left: 290px;
+    padding-right: 290px;
+    margin-top: 90px;
+}
+.icon-client-contrat{
+    color: #41B06E;
+    font-size: larger;
+}
+.icon-fecha-contrat{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+.estado-contrat{
+    background-color: #e8281a;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    margin-right: 5px;
+}
+.etapa-contrat{
+    background-color: #41B06E;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
