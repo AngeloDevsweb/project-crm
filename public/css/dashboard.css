@@ -48,4 +48,11 @@
     height: calc(100vh - 20px); /* Altura máxima del contenido principal, ajusta según necesites */
     overflow-y: auto; /* Habilita el scroll vertical si es necesario */
 }
-
+.estilo-dash-estado{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.estilo-dash-estado2{
+    min-height: 350px;
+}
