@@ -20,7 +20,7 @@ class ActivityController extends Controller
         //$activity = Activity::all();
        $user = Auth::user();
        $clientIds = $user->clients->pluck('id');
-       $activity = Activity::whereIn('client_id', $clientIds)->get();
+       $activity = Activity::whereIn('client_id', $clientIds)->paginate(5);
         return view('activity.index', compact('activity'));
     }
     public function create(){
