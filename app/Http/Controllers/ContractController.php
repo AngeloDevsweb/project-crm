@@ -22,7 +22,7 @@ class ContractController extends Controller
         //
         $user = Auth::user();
         $clientsId = $user->clients->pluck('id');
-        $contrats = Contract::whereIn('client_id', $clientsId)->get();
+        $contrats = Contract::whereIn('client_id', $clientsId)->paginate(5);
         return view('contrats.index', compact('contrats'));
     }
 

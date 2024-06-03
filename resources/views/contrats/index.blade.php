@@ -47,5 +47,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{$contrats->links()}}
 </div>
 @endsection
