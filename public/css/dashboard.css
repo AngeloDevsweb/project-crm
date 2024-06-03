@@ -56,3 +56,11 @@
 .estilo-dash-estado2{
     min-height: 350px;
 }
+.estilo-contrato-estado{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.estilo-contrato-estado-cont{
+    min-height: 350px;
+}

@@ -17,11 +17,15 @@
             <canvas id="actividadesPorTipo"></canvas>
         </div>
         <hr>
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
             <canvas id="actividadesPorFecha"></canvas>
-        </div>
+        </div> --}}
         <div class="col-md-6">
-            <canvas id="contratosPorEstado"></canvas>
+            <div class="estilo-contrato-estado">
+                <div class="estilo-contrato-estado-cont">
+                    <canvas id="contratosPorEstado"></canvas>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <canvas id="contratosPorCliente"></canvas>
@@ -43,6 +47,7 @@
         data: {
             labels: Object.keys(clientesPorEstado),
             datasets: [{
+                label:'Clientes',
                 data: Object.values(clientesPorEstado),
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','#e8281a']
             }]
@@ -55,7 +60,7 @@
         data: {
             labels: Object.keys(actividadesPorTipo),
             datasets: [{
-                label: 'Actividades por TIPO',
+                label: 'Actividad',
                 data: Object.values(actividadesPorTipo),
                 backgroundColor: ['#36A2EB','#FF6384', '#FFCE56']
             }]
