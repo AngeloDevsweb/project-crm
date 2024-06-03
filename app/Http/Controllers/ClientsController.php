@@ -19,7 +19,8 @@ class ClientsController extends Controller
         // $clients = Client::All();
         // return view('clients.index', compact('clients'));
         $userId = Auth::id();
-        $clients = Client::where('user_id', $userId)->get();
+        $clients = Client::where('user_id', $userId)->paginate(6);
+        
         //dd($clients);
         return view('clients.index', compact('clients'));
 
