@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Contract;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,34 +31,34 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        $clientesPorEstado = Client::where('user_id', $user->id )
+        $clientesPorEstado = Client::where('user_id', $user->id)
             ->selectRaw('estado, COUNT(*) as count')
             ->groupBy('estado')
             ->pluck('count', 'estado');
 
-        $actividadesPorTipo = Activity::selectRaw('tipodeactividad, COUNT(*) as count')
-            ->groupBy('tipodeactividad')
-            ->pluck('count', 'tipodeactividad');
 
-        $actividadesPorFecha = Activity::selectRaw('DATE(fecha) as fecha, COUNT(*) as count')
-            ->groupBy('fecha')
-            ->pluck('count', 'fecha');
-
-        $contratosPorEstado = Contract::selectRaw('estado, SUM(monto) as total')
-            ->groupBy('estado')
-            ->pluck('total', 'estado');
-
-        $contratosPorCliente = Contract::selectRaw('client_id, COUNT(*) as count')
+        // Contactos por cliente
+        $contactosPorCliente = Contact::whereHas('client', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->selectRaw('client_id, COUNT(*) as count')
             ->groupBy('client_id')
             ->pluck('count', 'client_id');
 
-        return view('home', compact(
-            'clientesPorEstado',
-            'actividadesPorTipo',
-            'actividadesPorFecha',
-            'contratosPorEstado',
-            'contratosPorCliente'
-        ));
-    }
+        // Actividades por tipo
+        $actividadesPorTipo = Activity::whereHas('client', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->selectRaw('tipodeactividad, COUNT(*) as count')
+            ->groupBy('tipodeactividad')
+            ->pluck('count', 'tipodeactividad');
 
+        // Contratos por etapa
+        $contratosPorEtapa = Contract::whereHas('client', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->selectRaw('etapa, COUNT(*) as count')
+            ->groupBy('etapa')
+            ->pluck('count', 'etapa');
+
+
+        return view('home', compact('clientesPorEstado', 'contactosPorCliente', 'actividadesPorTipo', 'contratosPorEtapa'));
+    }
 }

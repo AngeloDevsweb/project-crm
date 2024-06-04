@@ -2,115 +2,113 @@
 
 @section('content')
 <div class="container">
-    <h3 class="text-center mb-5">Dashboard</h3>
-    
-    <div class="row g-3">
+    <h1 class="text-center mb-5">Dashboard</h1>
+
+    <div class="row">
+        <!-- Clientes por Estado -->
         <div class="col-md-6">
-            <div class="estilo-dash-estado">
-                <div class="estilo-dash-estado2">
-                    <canvas id="clientesPorEstado"></canvas>
-                </div>
-            </div>
+            <h3>Clientes por Estado</h3>
+            <canvas id="clientesPorEstadoChart"></canvas>
         </div>
-        
+
+        <!-- Contactos por Cliente -->
         <div class="col-md-6">
-            <canvas id="actividadesPorTipo"></canvas>
+            <h3>Contactos por Cliente</h3>
+            <canvas id="contactosPorClienteChart"></canvas>
         </div>
-        <hr>
-        {{-- <div class="col-md-12">
-            <canvas id="actividadesPorFecha"></canvas>
-        </div> --}}
+    </div>
+    <hr>
+    <div class="row mt-4">
+        <!-- Actividades por Tipo -->
         <div class="col-md-6">
-            <div class="estilo-contrato-estado">
-                <div class="estilo-contrato-estado-cont">
-                    <canvas id="contratosPorEstado"></canvas>
-                </div>
-            </div>
+            <h3>Actividades por Tipo</h3>
+            <canvas id="actividadesPorTipoChart"></canvas>
         </div>
+
+        <!-- Contratos por Etapa -->
         <div class="col-md-6">
-            <canvas id="contratosPorCliente"></canvas>
+            <h3>Contratos por Etapa</h3>
+            <canvas id="contratosPorEtapaChart"></canvas>
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Clientes por Estado
+        var ctxClientesPorEstado = document.getElementById('clientesPorEstadoChart').getContext('2d');
+        var clientesPorEstadoChart = new Chart(ctxClientesPorEstado, {
+            type: 'pie',
+            data: {
+                labels: {!! json_encode($clientesPorEstado->keys()) !!},
+                datasets: [{
+                    label: 'Clientes por Estado',
+                    data: {!! json_encode($clientesPorEstado->values()) !!},
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                }]
+            }
+        });
 
-    const clientesPorEstado = @json($clientesPorEstado);
-    const actividadesPorTipo = @json($actividadesPorTipo);
-    const actividadesPorFecha = @json($actividadesPorFecha);
-    const contratosPorEstado = @json($contratosPorEstado);
-    const contratosPorCliente = @json($contratosPorCliente);
+        // Contactos por Cliente
+        var ctxContactosPorCliente = document.getElementById('contactosPorClienteChart').getContext('2d');
+        var contactosPorClienteChart = new Chart(ctxContactosPorCliente, {
+            type: 'bar',
+            data: {
+                labels: {!! json_encode($contactosPorCliente->keys()) !!},
+                datasets: [{
+                    label: 'Contactos por Cliente',
+                    data: {!! json_encode($contactosPorCliente->values()) !!},
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
 
-    // Clientes por estado
-    new Chart(document.getElementById('clientesPorEstado'), {
-        type: 'pie',
-        data: {
-            labels: Object.keys(clientesPorEstado),
-            datasets: [{
-                label:'Clientes',
-                data: Object.values(clientesPorEstado),
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','#e8281a']
-            }]
-        }
-    });
+        // Actividades por Tipo
+        var ctxActividadesPorTipo = document.getElementById('actividadesPorTipoChart').getContext('2d');
+        var actividadesPorTipoChart = new Chart(ctxActividadesPorTipo, {
+            type: 'doughnut',
+            data: {
+                labels: {!! json_encode($actividadesPorTipo->keys()) !!},
+                datasets: [{
+                    label: 'Actividades por Tipo',
+                    data: {!! json_encode($actividadesPorTipo->values()) !!},
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+                }]
+            }
+        });
 
-    // Actividades por tipo
-    new Chart(document.getElementById('actividadesPorTipo'), {
-        type: 'bar',
-        data: {
-            labels: Object.keys(actividadesPorTipo),
-            datasets: [{
-                label: 'Actividad',
-                data: Object.values(actividadesPorTipo),
-                backgroundColor: ['#36A2EB','#FF6384', '#FFCE56']
-            }]
-        },
-        options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-    });
-
-    // Actividades por fecha
-    new Chart(document.getElementById('actividadesPorFecha'), {
-        type: 'line',
-        data: {
-            labels: Object.keys(actividadesPorFecha),
-            datasets: [{
-                data: Object.values(actividadesPorFecha),
-                backgroundColor: '#FF6384'
-            }]
-        }
-    });
-
-    // Contratos por estado
-    new Chart(document.getElementById('contratosPorEstado'), {
-        type: 'doughnut',
-        data: {
-            labels: Object.keys(contratosPorEstado),
-            datasets: [{
-                data: Object.values(contratosPorEstado),
-                backgroundColor: ['#41B06E', '#e8281a', '#FF9800']
-            }]
-        }
-    });
-
-    // Contratos por cliente
-    new Chart(document.getElementById('contratosPorCliente'), {
-        type: 'bar',
-        data: {
-            labels: Object.keys(contratosPorCliente),
-            datasets: [{
-                label: 'Contratos por cliente',
-                data: Object.values(contratosPorCliente),
-                backgroundColor: '#e8281a',
-                borderWith:1
-            }]
-        }
+        // Contratos por Etapa
+        var ctxContratosPorEtapa = document.getElementById('contratosPorEtapaChart').getContext('2d');
+        var contratosPorEtapaChart = new Chart(ctxContratosPorEtapa, {
+            type: 'bar',
+            data: {
+                labels: {!! json_encode($contratosPorEtapa->keys()) !!},
+                datasets: [{
+                    label: 'Contratos por Etapa',
+                    data: {!! json_encode($contratosPorEtapa->values()) !!},
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     });
 </script>
 @endsection
-
