@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Client;
 use App\Models\Contract;
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $clientesPorEstado = Client::selectRaw('estado, COUNT(*) as count')
+        $user = Auth::user();
+
+        $clientesPorEstado = Client::where('user_id', $user->id )
+            ->selectRaw('estado, COUNT(*) as count')
             ->groupBy('estado')
             ->pluck('count', 'estado');
 

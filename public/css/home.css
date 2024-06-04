@@ -1,0 +1,18 @@
+.titulo-home{
+    margin-top: 90px;
+    font-weight: 600;
+    color: slategray;
+}
+.description-home{
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+.bton-comenzar{
+    text-decoration: none;
+    color: white;
+    background-color: #302b63;
+    border-radius: 25px;
+    padding: 20px;
+}
