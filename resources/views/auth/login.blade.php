@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>crm.dev</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset('storage/login.jpg') }}" height="550px" width="100%" alt="">
+                            <img src="{{ secure_asset('storage/login.jpg') }}" height="550px" width="100%" alt="">
                         </div>
                     </div>
                 </div>

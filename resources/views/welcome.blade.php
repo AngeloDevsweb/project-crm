@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="{{asset('/storage/faviconcrm.png')}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{secure_asset('/storage/faviconcrm.png')}}" type="image/x-icon">
         <title>CRMDEV</title>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/home.css') }}">
           <!-- Scripts -->
              @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
@@ -34,11 +34,11 @@
                     <p class="description-home">CRMDEV es un sistema que ayuda a las empresas a gestionar sus relaciones con los clientes. 
                         Proporciona herramientas para rastrear interacciones, administrar contactos, automatizar actividades y mejorar la comunicación con los clientes.
                          Un buen CRM puede ayudar a aumentar la eficiencia, mejorar la retención de clientes y optimizar las estrategias de ventas y marketing.</p>
-                         <a href="{{ route('login') }}" class="bton-comenzar">COMIENZA YA</a>
+                         <a href="{{ secure_url(route('login')) }}" class="bton-comenzar">COMIENZA YA</a>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <img src="{{ asset('storage/loginvector.png') }}" height="900px" width="100%" alt="">
+                    <img src="{{ secure_asset('storage/loginvector.png') }}" height="900px" width="100%" alt="">
                 </div>
             </div>
             
