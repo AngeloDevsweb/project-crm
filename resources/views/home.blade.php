@@ -4,6 +4,7 @@
 <div class="container">
     <h1 class="text-center mb-5">Dashboard</h1>
 
+    <p>detalles de registros</p>
     <div class="row">
         <!-- Clientes por Estado -->
         <div class="col-md-6">
