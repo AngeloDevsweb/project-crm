@@ -10,7 +10,7 @@ export default defineConfig({
             ],
             refresh: true,
             server: {
-                https: true,
+                https: true, //Fuerza HTTPS en el servidor de desarrollo
             }
         }),
     ],

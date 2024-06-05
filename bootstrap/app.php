@@ -41,13 +41,7 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-// Add this block to replace the default Request class
-$app->singleton(
-    Illuminate\Http\Request::class,
-    function () {
-        return App\Custom\Http\Request::capture();
-    }
-);
+
 
 /*
 |--------------------------------------------------------------------------
