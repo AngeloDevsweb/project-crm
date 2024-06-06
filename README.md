@@ -67,3 +67,7 @@ php artisan make:model Contact
     php artisan make:controller ContractController --resource
 
 ```
+8 Nxpacks para .env
+```bash
+NIXPACKS_BUILD_CMD=composer install && npm install && npm run build && php artisan optimize && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force
+```

@@ -31,7 +31,7 @@
         <div>
             <div class="sidebar-container">
                 <div class="logo">
-                    <img src="{{asset('/storage/login.jpg')}}" alt="" class="image-logo" >
+                    <img src="https://github.com/AngeloDevsweb/Login-and-register-con-firebase/blob/main/src/assets/login.jpg?raw=true" alt="" class="image-logo" >
                     <h4 class="text-center text-white">CRM.dev</h4>
                     
                 </div>

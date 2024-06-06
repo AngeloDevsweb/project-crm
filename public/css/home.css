@@ -1,19 +1,63 @@
-.titulo-home{
+/* Estilos personalizados */
+.container .titulo-home {
     margin-top: 90px;
     font-weight: 600;
     color: slategray;
 }
-.description-home{
+
+.container .description-home {
     margin-top: 10px;
     font-weight: 300;
     font-size: 17px;
     margin-bottom: 45px;
 }
-.bton-comenzar{
+
+.container .bton-comenzar {
     text-decoration: none;
     color: white;
     background-color: #302b63;
     border-radius: 25px;
     padding: 20px;
     margin-bottom: 10px;
+    display: inline-block;
+    text-align: center;
 }
+
+.container .tamano-imagen {
+    width: 100%;
+    height: 850px;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 992px) and (max-width: 1362px) {
+    .container .tamano-imagen {
+        width: 100%;
+        height: 590px;
+        margin-top: 20px;
+    }
+}
+/* Pantallas de Laptop Pequeñas (13” y 14”) */
+/* Para pantallas de 1366px a 1440px de ancho */
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+    .container .tamano-imagen {
+        width: 100%;
+        height: 600px;
+        margin-top: 20px;
+    }
+}
+
+/* Pantallas de Laptop Medianas (15” a 16”) */
+/* Para pantallas de 1600px a 1680px de ancho */
+@media only screen and (min-width: 1600px) and (max-width: 1680px) {
+    .container .tamano-imagen {
+        width: 100%;
+        height: 600px;
+        margin-top: 20px;
+    }
+    .container .bton-comenzar {
+        background-color: #1a126e;
+    }
+}
+
+

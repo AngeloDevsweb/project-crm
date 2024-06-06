@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ asset('storage/register.jpg') }}" height="550px" width="100%" alt="">
+                        <img src="https://github.com/AngeloDevsweb/Login-and-register-con-firebase/blob/main/src/assets/register.jpg?raw=true" height="550px" width="100%" alt="">
                     </div>
                 </div>
             </div>

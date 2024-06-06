@@ -49,3 +49,19 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 55px;
 }
+
+/* Media Queries */
+@media only screen and (min-width: 992px) and (max-width: 1362px) {
+    
+}
+/* Pantallas de Laptop Pequeñas (13” y 14”) */
+/* Para pantallas de 1366px a 1440px de ancho */
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+   
+}
+
+/* Pantallas de Laptop Medianas (15” a 16”) */
+/* Para pantallas de 1600px a 1680px de ancho */
+@media only screen and (min-width: 1600px) and (max-width: 1680px) {
+   
+}

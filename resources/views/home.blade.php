@@ -9,7 +9,11 @@
         <!-- Clientes por Estado -->
         <div class="col-md-6">
             <h3>Clientes por Estado</h3>
-            <canvas id="clientesPorEstadoChart"></canvas>
+            <div class="estilo-dash-estado">
+                <div class="estilo-dash-estado2">
+                    <canvas id="clientesPorEstadoChart"></canvas>
+                </div>
+            </div>
         </div>
 
         <!-- Contactos por Cliente -->
@@ -23,7 +27,11 @@
         <!-- Actividades por Tipo -->
         <div class="col-md-6">
             <h3>Actividades por Tipo</h3>
-            <canvas id="actividadesPorTipoChart"></canvas>
+            <div class="estilo-contrato-estado">
+                <div class="estilo-contrato-estado-cont">
+                    <canvas id="actividadesPorTipoChart"></canvas>
+                </div>
+            </div>
         </div>
 
         <!-- Contratos por Etapa -->
